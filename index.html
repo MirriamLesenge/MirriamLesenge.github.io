@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 👉 EDIT 1: Change "Amara Dlamini" to your name -->
+  <title>Mirriam Lesenge — Data Analyst Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --navy:    #1B2A4A;
+      --mid:     #2B4580;
+      --accent:  #E8B84B;
+      --dark:    #0D1B2A;
+      --text:    #3D4F66;
+      --muted:   #8A96A8;
+      --bg:      #F4F6FA;
+      --surface: #FFFFFF;
+      --border:  #DDE3EE;
+      --radius:  10px;
+      --shadow:  0 4px 20px rgba(13,27,42,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      height: 60px; padding: 0 6%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-socials { display: flex; gap: 16px; }
+    .nav-socials a { color: rgba(255,255,255,0.6); font-size: 15px; transition: color 0.2s; }
+    .nav-socials a:hover { color: var(--accent); }
+
+    /* ── INTRO ── */
+    #intro {
+      background: var(--navy);
+      padding: 64px 6% 72px;
+      border-bottom: 4px solid var(--accent);
+    }
+    .intro-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 260px;
+      gap: 60px; align-items: center;
+    }
+    .intro-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(34px, 5vw, 56px);
+      color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 10px;
+    }
+    .intro-title {
+      font-size: 16px; font-weight: 400;
+      color: var(--accent); margin-bottom: 22px;
+    }
+    .intro-bio {
+      font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.9;
+    }
+    .intro-photo {
+      width: 100%; aspect-ratio: 1/1; border-radius: 50%;
+      border: 4px solid var(--accent);
+      object-fit: cover; overflow: hidden;
+      background: var(--mid);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .intro-photo i { font-size: 70px; color: rgba(255,255,255,0.15); }
+
+    /* ── PROJECTS ── */
+    #projects { padding: 70px 6%; max-width: 1100px; margin: 0 auto; }
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 30px; color: var(--dark);
+      margin-bottom: 34px; padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+    .proj-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    .proj-img {
+      width: 100%; height: 185px;
+      background: linear-gradient(135deg, var(--navy), var(--mid));
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.2); font-size: 40px;
+      position: relative; overflow: hidden;
+    }
+    .proj-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .proj-tool {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(13,27,42,0.75); color: #fff;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 4px;
+    }
+
+    .proj-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+    .proj-body h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.4; }
+    .proj-body p { font-size: 13px; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 14px; }
+    .proj-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--navy); color: #fff;
+      font-size: 12px; font-weight: 600;
+      padding: 8px 18px; border-radius: 6px;
+      align-self: flex-start; transition: background 0.2s;
+    }
+    .proj-btn:hover { background: var(--mid); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--navy);
+      padding: 50px 6%;
+      border-top: 4px solid var(--accent);
+    }
+    .contact-inner { max-width: 1100px; margin: 0 auto; }
+    .contact-heading { font-family: 'DM Serif Display', serif; font-size: 26px; color: #fff; margin-bottom: 20px; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .contact-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.75); }
+    .contact-list li i { color: var(--accent); width: 18px; text-align: center; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1A; padding: 20px 6%;
+      text-align: center; font-size: 12px; color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .intro-inner { grid-template-columns: 1fr; }
+      .intro-photo { max-width: 180px; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:580px){
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <!-- 👉 EDIT 1: Replace "Amara" with your first name -->
+  <div class="nav-logo">Mirriam <span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a href="https://www.linkedin.com/in/mirriam-lesenge-8451212b5" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</nav>
+
+
+<!-- ═══ INTRO ═══ -->
+<section id="intro">
+  <div class="intro-inner">
+    <div>
+      <h1 class="intro-name">Hi, I'm Mirriam Lesenge</h1>
+      <p class="intro-title">A Data Analyst skilled in Power BI, MySQL, Excel and Python</p>
+      <p class="intro-bio">
+        I leverage data analytics to drive smarter business decisions and fuel growth. With certifications in data analytics and experience in entrepreneurship, I blend technical expertise with business acumen to uncover actionable insights.
+        <br><br>
+        I am proficient in Power BI, MySQL, Excel and Python — using these tools for data cleaning, data visualisation and extracting actionable business insights from complex datasets.
+        <br><br>
+        My entrepreneurial background gives me a unique perspective on data — I do not just analyse numbers, I think about what they mean for a business and how they can be used to create real impact.
+      </p>
+    </div>
+    <img src="images/Mirriam.jpeg" class="intro-photo" alt="Mirriam Lesenge" />
+  </div>
+</section>
+
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <h2 class="section-heading">My Projects</h2>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <!-- 👉 EDIT 7: Replace title, description and link for your first project -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <!-- 👉 Add screenshot: <img src="images/project1.png" alt="Project name" /> -->
+        <i class="fa-solid fa-chart-bar"></i>
+        <span class="proj-tool">Excel</span>
+      </div>
+      <div class="proj-body">
+        <h3>Global Chocolate Sales Analysis</h3>
+        <p>Analysed chocolate sales data across products, salespeople and regions using Excel PivotTables to uncover performance trends and identify the biggest growth opportunities.</p>
+        <!-- 👉 Replace # with your actual project link (Medium article, GitHub etc.) -->
+        <a href="#" class="proj-btn" target="_blank">View</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <!-- 👉 EDIT 8: Replace title, description and link for your second project -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <i class="fa-solid fa-database"></i>
+        <span class="proj-tool">SQL</span>
+      </div>
+      <div class="proj-body">
+        <h3>South Africa Road Accident Analysis</h3>
+        <p>Used SQL to explore road accident data across South African provinces — identifying high-risk locations, peak accident times and contributing factors.</p>
+        <a href="#" class="proj-btn" target="_blank">View</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <!-- 👉 EDIT 9: Replace title, description and link for your third project -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="proj-tool">Power BI</span>
+      </div>
+      <div class="proj-body">
+        <h3>Global Mental Health Trends Dashboard</h3>
+        <p>Built an interactive Power BI dashboard analysing depression and anxiety rates across countries, age groups and gender to identify the most affected demographics.</p>
+        <a href="#" class="proj-btn" target="_blank">View</a>
+      </div>
+    </div>
+
+
+  
+
+  </div>
+</section>
+
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-heading">Get in touch</h2>
+    <ul class="contact-list">
+      <li><i class="fa-solid fa-envelope"></i> Ofentselesenya09@gmail.com</li>
+      <li><i class="fa-solid fa-location-dot"></i> Emalahleni, South Africa</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <

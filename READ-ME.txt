@@ -1,0 +1,20 @@
+IMAGES FOLDER — READ THIS FIRST
+================================
+
+This is where you save all your images before uploading to GitHub.
+
+WHAT TO PUT HERE:
+1. Your profile photo
+   - Save it as: photo.jpg
+   - Must be a clear, professional headshot
+
+2. Your project screenshots (add these later when projects are done)
+   - Save them as: project1.png, project2.png, project3.png
+   - Take a full screenshot of each completed dashboard or analysis
+
+HOW TO ADD YOUR PHOTO TO THE PORTFOLIO:
+- Open index.html in VS Code
+- Press Ctrl + F and search for: EDIT 6
+- Follow the instructions in the comment to replace the placeholder
+
+DELETE THIS TEXT FILE before uploading to GitHub.
