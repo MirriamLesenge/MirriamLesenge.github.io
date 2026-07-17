@@ -124,7 +124,19 @@
       align-self: flex-start; transition: background 0.2s;
     }
     .proj-btn:hover { background: var(--mid); }
+.proj-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
 
+.proj-btn.secondary {
+    background: #555;
+}
+
+.proj-btn.secondary:hover {
+    background: #333;
+}
     /* ── CONTACT ── */
     #contact {
       background: var(--navy);
@@ -237,21 +249,27 @@
 </div>
     <!-- PROJECT 3 -->
     
-    <div class="proj-card">
-      <div class="proj-img">
-        <i class="fa-solid fa-chart-line"></i>
-        <img src="Delivery Analysis.jpeg" alt="Restaurant Delivery Operations Dashboard">
-        <span class="proj-tool">Power BI</span>
-      </div>
-      <div class="proj-body">
-        <h3>Restaurant Delivery Operations Analysis Dashboard</h3>
-        <p> Analyzed 54,000+ restaurant delivery orders in Power BI to identify operational
-      bottlenecks affecting delivery performance, refunds, and customer satisfaction.
-      Built an interactive dashboard with KPIs, delivery trends, regional analysis,
-      and driver performance insights.</p>
-        <a href="https://medium.com/@ofentselesenya09/6-call-center-restaurant-orders-challenge-6-b5d260a7f9bf" class="proj-btn" target="_blank">View</a>
-      </div>
-    </div>
+    <div class="proj-body">
+  <h3>Restaurant Delivery Operations Analysis Dashboard</h3>
+
+  <p>
+    Analyzed 54,000+ restaurant delivery orders in Power BI to identify operational
+    bottlenecks affecting delivery performance, refunds, and customer satisfaction.
+    Built an interactive dashboard with KPIs, delivery trends, regional analysis,
+    and driver performance insights.
+  </p>
+
+  <div class="proj-buttons">
+    <a href="https://app.powerbi.com/view?r=eyJrIjoiMzViYTQ1NWEtYjIzMi00ODk4LThkOGEtZjRhNjg2MmM4ZGRiIiwidCI6IjFlYzMwNTFlLTg0ZDEtNGUxMi04YTBiLTFjYzg0M2JkMGVkMCIsImMiOjEwfQ%3D%3D" class="proj-btn" target="_blank">
+      Live Dashboard
+    </a>
+
+    <a href="https://medium.com/@ofentselesenya09/6-call-center-restaurant-orders-challenge-6-b5d260a7f9bf" class="proj-btn secondary" target="_blank">
+      Case Study
+    </a>
+  </div>
+</div>
+    
 
 
   <!-- PROJECT 4 -->
